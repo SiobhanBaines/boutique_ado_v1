@@ -15,12 +15,15 @@
 
     {% block corecss %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {%  endblock %}
 
     {% block extracss %}
     {% endblock %}
 
     {% block corejs %}
+    <script src="https://kit.fontawesome.com/6f54b463af.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     {% endblock %}
     
@@ -31,7 +34,7 @@
   </head>
   <body>
     <header class="container-fluid fixed-top">
-      <div class="row">
+      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <h2 class="logo-font text-black my-0"><strong>Boutique</strong> Ado</h2>
@@ -40,7 +43,7 @@
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
           <form method="GET" action="">
             <div class="input-group w-100">
-              <input type="text" name="q" placesholder="Search our site" class="form-control border border-black rounded-0">
+              <input type="text" name="q" placeholder="Search our site" class="form-control border border-black rounded-0">
               <div class="input-group-append">
                 <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                   <span class="icon"><i class="fas fa-search"></i>
@@ -52,7 +55,7 @@
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
           <ul class="list-inline list-unstyled text-center text-lg-right my0">
-            <li class="clist-inline-item dropdown">
+            <li class="list-inline-item dropdown">
               <a href="#" class="text-black nav-link" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="text-center">
                   <div><i class="fas fa-user fa-lg"></i></div>
@@ -72,7 +75,7 @@
                 {% endif %}
               </div>
             </li>
-            <li class="clist-inline-item">
+            <li class="list-inline-item">
               <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
                 <div class="text-center">
                   <div><i class="fas fa-shopping-bag fa-lg"></i></div>

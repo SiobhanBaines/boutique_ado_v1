@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     
     # other
     'crispy_forms',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -58,7 +59,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'boutique_ado.urls'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -71,19 +72,19 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',    # required by allauth
+                'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
-            'builtins':[
+            'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
-                'cripsy_forms.templatetags.crispy_forms_field',
+                'crispy_forms.templatetags.crispy_forms_field',
             ]
         },
     },
 ]
-
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = (

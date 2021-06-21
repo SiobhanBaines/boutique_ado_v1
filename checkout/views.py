@@ -58,6 +58,7 @@ def checkout(request):
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
+            print('line 61 pid ', pid)
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
             order.save()
